@@ -4,6 +4,7 @@
     <title>Premier pas</title>
 <body>
 <h1>Imen</h1>
+<<<<<<< HEAD
 <div class="ok"> Il y a <?=count($session)?> sessions </div>
 <?php 
 if(count($session) != 0)
@@ -28,4 +29,7 @@ if(count($session) != 0)
 <?php
 }
 ?>
+=======
+<div class="ok"> Session ok </div>
+>>>>>>> 826a19b... session
 </body></head></html>
