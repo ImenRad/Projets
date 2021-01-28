@@ -12,5 +12,18 @@ class SessionDao{
         }
         return $result;
     }
+
+    public static function getAll()
+    {
+        return array(
+            array(
+                "id_session_formation" => 1,
+                "nom" => "CDA1"
+            ),
+            array(
+                "id_session_formation" => 2,
+                "nom" => "CDA2"
+            ));
+    }
 }
 ?>
