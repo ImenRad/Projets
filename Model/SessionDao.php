@@ -15,15 +15,22 @@ class SessionDao{
 
     public static function getAll()
     {
-        return array(
-            array(
-                "id_session_formation" => 1,
-                "nom" => "CDA1"
-            ),
-            array(
-                "id_session_formation" => 2,
-                "nom" => "CDA2"
-            ));
+        // return array(
+        //     array(
+        //         "id_session_formation" => 1,
+        //         "nom" => "CDA1"
+        //     ),
+        //     array(
+        //         "id_session_formation" => 2,
+        //         "nom" => "CDA2"
+        //     ));
+        $req = MonPdo::getInstance()->prepare("SELECT * FROM session_formation");
+        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $req->execute();
+
+        $stmt = $req->fetchAll();
+        return $stmt;
     }
+
 }
 ?>

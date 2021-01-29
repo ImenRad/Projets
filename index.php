@@ -1,4 +1,5 @@
 <?php
+include "Model/MonPdo.php";
 session_start();
 
 $idSession = filter_input(INPUT_GET, 'idSession', FILTER_VALIDATE_INT);
@@ -13,6 +14,6 @@ if($idSession == null || $idSession == false)
     $session = SessionDao::getById($idSession);
 }
 
-require_once "view/indexV.php";
+require_once "view/sessionV.php";
 require_once "controller/controllerSession.php";
 ?>
