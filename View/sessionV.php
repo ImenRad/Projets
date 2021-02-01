@@ -4,18 +4,18 @@
     <title>Premier pas</title>
 <body>
 <h1>Imen</h1>
-<div class="ok"> Il y a <?=count($session)?> sessions </div>
+<div class="ok"> Il y a <?=$stmt?> sessions </div>
 <?php 
-if(count($session) != 0)
+if($stmt != 0)
 {
 ?>
 <ol>
 <?php
-    foreach($session as $sess)
+    foreach($stmt as $s)
     {
     ?>
-    <li><a href="projets.php?idSession=<?= $sess["id_session_formation"]?>"><?= $sess["nom"] ?></a>
-    (#<?= $sess["id_session_formation"]?>)
+    <li><a href="projets.php?idSession=<?= $idSession?>"><?= $s->getNom(); ?></a>
+    (#<?= $s->getId_session_formation();?>)
     </li>
     <?php
     }

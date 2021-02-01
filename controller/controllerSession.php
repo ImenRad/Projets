@@ -1,7 +1,7 @@
 <?php
 require "Model/SessionDao.php";
 try{
-$session = SessionDao::getAll();
+$stmt = SessionDao::getAll();
 require_once "View/sessionV.php";
 }
 catch (PDOException $e) {

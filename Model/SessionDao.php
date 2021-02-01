@@ -1,12 +1,25 @@
 <?php
 class SessionDao{
+
+    private $id_session_formation;
+    private $nom;
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function getId_session_formation()
+    {
+        return $this->id_session_formation;
+    }
+
     public static function getById($idSession)
     {
         $result = null;
         if($idSession == 1)
         {
             $result = array(
-                "id_session" => 1,
+                "id_session_formation" => 1,
                 "nom" => "CDA 1",
             );
         }
@@ -25,7 +38,7 @@ class SessionDao{
         //         "nom" => "CDA2"
         //     ));
         $req = MonPdo::getInstance()->prepare("SELECT * FROM session_formation");
-        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'SessionDao');
         $req->execute();
 
         $stmt = $req->fetchAll();
